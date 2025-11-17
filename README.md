@@ -159,5 +159,5 @@ This backend system is built as a practical demonstration of:
 🧑‍💻 Author
 
 Sherif Hassan — Backend Developer
-🌐 LinkedIn: add your link here
+🌐 LinkedIn: www.linkedin.com/in/shrief-hassan-1a31a032b
 📧 Email: shriefhassanali@gmail.com
