@@ -41,7 +41,6 @@ This project was developed as a training/practice project, focusing on productio
 
 
 🛠️ CMS (Admin Panel)
-
 AdminJS panel for managing:
 
 -> Users
@@ -71,7 +70,6 @@ AdminJS panel for managing:
 
 
 Project Structure:
-
 Restaurant-Project/
 │── README.md
 │── package.json
@@ -93,3 +91,73 @@ Restaurant-Project/
     ├── adminJS.js
     ├── bundle.js
     ├── entry.js
+
+
+🚀 Installation & Setup
+1️⃣ Clone repository
+git clone https://github.com/Sherif761/restaurant-reservation-system.git
+cd restaurant-reservation-system
+
+2️⃣ Install dependencies
+npm install
+
+3️⃣ Create .env
+PORT=5000
+MONGO_URI=your_mongo_connection_string
+SESSION_SECRET=yourSecret
+GOOGLE_CLIENT_ID=xxxx
+GOOGLE_CLIENT_SECRET=xxxx
+PAYMENT_API_KEY=xxxx
+
+4️⃣ Start server
+npm start
+
+
+🧱 Technologies Used:
+
+-> Node.js
+
+-> Express.js
+
+-> MongoDB + Mongoose
+
+-> AdminJS
+
+-> express-session
+
+-> passport
+
+-> Session + JWT
+
+-> Bcrypt
+
+-> Express-rate-limit
+
+-> Helmet, CORS
+
+
+🎯 Purpose of This Project:
+This backend system is built as a practical demonstration of:
+
+-> Building production-level backend architecture
+
+-> Applying user authentication and authorization
+
+-> Handling API's
+
+-> Managing sessions securely
+
+-> Creating an admin dashboard (CMS)
+
+-> Handling security vulnerabilities
+
+-> Designing modular code with controllers/services
+
+-> Managing database using mongodb and mongoose drivers
+
+
+🧑‍💻 Author
+
+Sherif Hassan — Backend Developer
+🌐 LinkedIn: add your link here
+📧 Email: shriefhassanali@gmail.com
