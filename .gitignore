@@ -1,0 +1,6 @@
+node_modules/
+.env
+*.pem
+https://github.com/Sherif761/Restaurant-table-reservations
+git remote add origin https://github.com/Sherif761/Restaurant-table-reservations
+
