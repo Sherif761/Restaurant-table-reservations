@@ -3,7 +3,7 @@ const { MongoClient } = require("mongodb")
 let dbconnection
 module.exports = {
     connectiondb: (cb)=>{
-        MongoClient.connect("mongodb://localhost:27017/first_project")
+        MongoClient.connect("mongodb://localhost:27017/Restaurant-reservations")
     .then((client)=>{
         dbconnection = client.db()
         // console.log("done")

@@ -1,6 +1,6 @@
 import {mongoose} from "mongoose";
 
-mongoose.connect('mongodb://localhost:27017/first_project')
+mongoose.connect('mongodb://localhost:27017/Restaurant-reservations')
 .catch((err) => {
       console.log("Connection failed", err.message);
     })
@@ -18,7 +18,7 @@ const TableSchema = new mongoose.Schema({
       min: [1, "tableId must be positive"],
       validate: {
             validator: Number.isInteger,
-            message: "tableId must be a positive integer"
+            message: "table Id must be a positive integer"
         }
     },
   maxCapacity: { 
@@ -27,7 +27,7 @@ const TableSchema = new mongoose.Schema({
      min: [1, "tableId must be positive"],
      validate: {
             validator: Number.isInteger,
-            message: "maxCapacity must be an integer"
+            message: "max Capacity must be an integer"
         }
     },
   minCapacity: { 
@@ -36,7 +36,7 @@ const TableSchema = new mongoose.Schema({
      min: [1, "tableId must be positive"],
      validate: {
             validator: Number.isInteger ,
-            message: "minCapacity must be an integer"
+            message: "min Capacity must be an integer"
         }
     },
     available_range: { 
@@ -46,12 +46,12 @@ const TableSchema = new mongoose.Schema({
             validator: function(v) {
         return /^\d{1,2}:\d{2}-\d{1,2}:\d{2}$/.test(v);
       },
-      message: "available_range format must be like 9:00-21:00"
+      message: "available range format must be like 9:00-21:00"
         }
     },
     reserve: { 
     type: Array,
-    default: []
+    default: [{}]
   },
     no_chairs: { 
     type: Number,
@@ -78,6 +78,28 @@ TableSchema.pre("validate", function(next) {
 
 export const table = mongoose.model("tables", TableSchema);
 
+const mealsSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  preparation_time: {
+    type: String,
+    required: true,
+    validate: {
+            validator: function(v) {
+        return /^\d{1,2}:\d{2}$/.test(v);
+      },
+      message: "preparation time format must be like 00:20"
+        }
+  }
+}, { 
+collection: "meals", 
+timestamps: true, 
+strict: "throw" 
+})
+
+export const meal = mongoose.model("meals", mealsSchema);
 // const login_signup = new mongoose.Schema({
 //   name: {
 //       type: String,

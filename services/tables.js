@@ -119,7 +119,7 @@ reserve = async function(req, res, next){
             for(m = 0 ; m< req.body.meals.length ; m++){
                 mealArray.push(await getdb().collection('meals').findOne({name: req.body.meals[m]}))
                 console.log(mealArray)
-                expectedEndTime.push([startHour + Number(mealArray[m].time.split(":")[0]), startMinute + Number(mealArray[m].time.split(":")[1])])
+                expectedEndTime.push([startHour + Number(mealArray[m].preparation_time.split(":")[0]), startMinute + Number(mealArray[m].preparation_time.split(":")[1])])
                 if(expectedEndTime[m][1] > 59){
                     expectedEndTime[m][0]++
                     expectedEndTime[m][1] -= 60

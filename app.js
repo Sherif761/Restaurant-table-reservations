@@ -35,6 +35,7 @@ app.use(cors({
 
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))//for parsing x-www-form-urlencoded
+app.use(express.static("public"));
 // app.use(cookieParser());
 
 app.use(session({
@@ -50,13 +51,13 @@ app.use(session({
         sameSite: 'None'      // ✅ Required for cross-origin cookies
     },
     store: MongoStore.create({ //collection to store session storage
-        mongoUrl: 'mongodb://localhost:27017/first_project',// if logout session store is deleted
+        mongoUrl: 'mongodb://localhost:27017/Restaurant-reservations',// if logout session store is deleted
         collectionName: 'session',
     })
 }));
 
 app.set('view engine', 'ejs');//app.set is for defining how the express works
-app.set('views', path.join(process.cwd(), 'strategies')); //as the ejs file is inside strategies folder
+app.set('views', path.join(process.cwd(), 'services')); //as the ejs file is inside strategies folder
 
 app.use(passport.session())
 app.use(passport.initialize())
@@ -78,7 +79,7 @@ app.use(admin.options.rootPath,notUser, (req, res, next)=>{
 
 app.get('/register', (req, res)=>{
     let message = req.query.mess
-    res.send({mess: message})
+    res.status(409).send({mess: message})
 })
 
 app.post('/register', register, (req, res)=>{

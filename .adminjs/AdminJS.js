@@ -6,7 +6,7 @@ import AdminJS from 'adminjs';
 import AdminJSExpress  from '@adminjs/express';
 import { Database, Resource } from '@adminjs/mongoose';
 
-import {table} from '../config/schemas.js'
+import {table, meal} from '../config/schemas.js'
 
 AdminJS.registerAdapter({ Database, Resource })
 // import mongoose from "mongoose";
@@ -20,6 +20,10 @@ const adminOptions = {
     {
       resource: table,
       options: {
+        listProperties: ['tableId', 'maxCapacity', 'minCapacity', 'available_range', 'no_chairs'],
+        editProperties: ['tableId', 'maxCapacity', 'minCapacity', 'available_range', 'no_chairs'],
+        filterProperties: ['tableId', 'maxCapacity'],
+        
         properties: {
           tableId: {
             label: 'Table ID',   // custom label shown in admin
@@ -32,24 +36,30 @@ const adminOptions = {
             // type: 'richtext', // Optional: nicer editor
           },
           available_range: {
-            label: 'Available Range',
+            label: "Available Rangeeee",
             // type: 'richtext', // Optional: nicer editor
           },
           no_chairs: {
-            label: 'Number Of Available Chairs In The Whole Place',
+            label: 'number of chairs in whole restaurant',
             // type: 'richtext', // Optional: nicer editor
           },
+        },
+      },
     },
-        listProperties: ['tableId', 'maxCapacity', 'minCapacity', 'available_range', 'no_chairs'],
-        editProperties: ['tableId', 'maxCapacity', 'minCapacity', 'available_range', 'no_chairs'],
-        filterProperties: ['tableId', 'maxCapacity'],
+
+    {
+      resource: meal,
+      options: {
+        listProperties: ['name', 'preparation_time'],
+        editProperties: ['name', 'preparation_time'],
+        filterProperties: ['name', 'preparation_time'],
       },
     }
   ],//listProperties, editProperties, filterProperties should be like the schema
   branding: {
     companyName: 'My CMS Dashboard',
     softwareBrothers: false,
-    logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGxwl4fhem6m2urbLPsROL7UHP2tjF4CowszALXe5IwDIMG7C2VdCqSyLCsNi4mrqWuKJgVE215SQCpX3TOTQSUgwhOnN_kBr2FB6omLvWww&s=10',
+    logo: '/images/logo.png'
   },
 };
 
