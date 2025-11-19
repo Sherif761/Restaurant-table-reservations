@@ -78,7 +78,7 @@ app.use(admin.options.rootPath,notUser, (req, res, next)=>{
 
 app.get('/register', (req, res)=>{
     let message = req.query.mess
-    res.send({mess: message})
+    res.status(409).send({mess: message})
 })
 
 app.post('/register', register, (req, res)=>{
