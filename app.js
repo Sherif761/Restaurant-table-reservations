@@ -56,7 +56,7 @@ app.use(session({
 }));
 
 app.set('view engine', 'ejs');//app.set is for defining how the express works
-app.set('views', path.join(process.cwd(), 'strategies')); //as the ejs file is inside strategies folder
+app.set('views', path.join(process.cwd(), 'services')); //as the ejs file is inside strategies folder
 
 app.use(passport.session())
 app.use(passport.initialize())
