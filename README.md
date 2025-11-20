@@ -92,15 +92,33 @@ Restaurant-Project/
     ├── bundle.js
     ├── entry.js
 
--> screenshots:
+## screenshots:
 
 ## API responses:
 
-| Register Users | User already registered (with same email) |
+| User registeration | User already registered (with already registered email) |
 |----------|-------------|
 | <img src="screenshots/postman/register.PNG" width="400"/> | <img src="screenshots/postman/already_registered.PNG" width="400"/> | 
  
+| User login | Invalid credentials |
+|----------|-------------|
+| <img src="screenshots/postman/login.PNG" width="400"/> | <img src="screenshots/postman/unauthorized.PNG" width="400"/> | 
 
+| User reservations | Cancelled reservation |
+|----------|-------------|
+| <img src="screenshots/postman/userReservations.PNG" width="400"/> | <img src="screenshots/postman/cancelReservation.PNG" width="400"/> | 
+
+| All restaurant tables | Successful reservation |
+|----------|-------------|
+| <img src="screenshots/postman/all_tables.PNG" width="400"/> | <img src="screenshots/postman/reservation.PNG" width="400"/> | 
+
+| Register Users | User already registered (with already registered email) |
+|----------|-------------|
+| <img src="screenshots/postman/register.PNG" width="400"/> | <img src="screenshots/postman/already_registered.PNG" width="400"/> | 
+
+| Register Users | User already registered (with already registered email) |
+|----------|-------------|
+| <img src="screenshots/postman/register.PNG" width="400"/> | <img src="screenshots/postman/already_registered.PNG" width="400"/> | 
                                                             
 
 🚀 Installation & Setup
