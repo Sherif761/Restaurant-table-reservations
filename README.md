@@ -112,9 +112,11 @@ Restaurant-Project/
 |----------|-------------|
 | <img src="screenshots/postman/all_tables.PNG" width="400"/> | <img src="screenshots/postman/reservation.PNG" width="400"/> | 
 
-| Unavailbale time for reservation | User already registered (with already registered email) |
+| Unavailbale time for reservation | User cancelling reservation which is not reserved by him |
 |----------|-------------|
-| <img src="screenshots/postman/register.PNG" width="400"/> | <img src="screenshots/postman/already_registered.PNG" width="400"/> | 
+| <img src="screenshots/postman/res_timeUnavailable.PNG" width="400"/> | <img src="screenshots/postman/no_reservation_to_be_cancelled.PNG" width="400"/> | 
+
+
 
 | Register Users | User already registered (with already registered email) |
 |----------|-------------|
