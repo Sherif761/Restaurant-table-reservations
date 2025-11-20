@@ -92,7 +92,7 @@ Restaurant-Project/
     ├── bundle.js
     ├── entry.js
 
-## screenshots:
+# screenshots:
 
 ## API responses:
 
