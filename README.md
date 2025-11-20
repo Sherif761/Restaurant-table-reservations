@@ -92,6 +92,12 @@ Restaurant-Project/
     ├── bundle.js
     ├── entry.js
 
+-> screenshots:
+
+API responses:
+
+![Registeration](screenshots/register.png)
+
 
 🚀 Installation & Setup
 1️⃣ Clone repository
