@@ -98,7 +98,7 @@ Restaurant-Project/
 
 | Get Users | Create User | fuck user|
 |----------|-------------|
-| <img src="screenshots/postman/register.PNG" width="250"/> | <img src="screenshots/postman/register.PNG" width="250"/> | <img src="screenshots/postman/register.PNG" width="250"/>|
+| <img src="screenshots/postman/register.PNG" width="250"/> | <img src="screenshots/postman/register.PNG" width="250"/> | <img src="screenshots/postman/register.PNG" width="100"/>|
  
 
                                                             
