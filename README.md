@@ -96,9 +96,9 @@ Restaurant-Project/
 
 ## API responses:
 
-| Get Users | Create User |
+| Register Users | User already registered (with same email) |
 |----------|-------------|
-| <img src="screenshots/postman/register.PNG" width="400"/> | <img src="screenshots/postman/register.PNG" width="400"/> | 
+| <img src="screenshots/postman/register.PNG" width="400"/> | <img src="screenshots/postman/already_registered.PNG" width="400"/> | 
  
 
                                                             
