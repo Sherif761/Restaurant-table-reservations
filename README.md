@@ -96,7 +96,7 @@ Restaurant-Project/
 
 ## API responses:
 
-| Get Users | Create User |
+| Get Users | Create User | fuck user|
 |----------|-------------|
 | <img src="screenshots/postman/register.PNG" width="250"/> | <img src="screenshots/postman/register.PNG" width="250"/> | <img src="screenshots/postman/register.PNG" width="250"/>|
  
