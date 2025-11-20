@@ -2,8 +2,8 @@
 A full backend system for managing restaurant reservations, built with Node.js, Express, and MongoDB.
 This project was developed as a training/practice project, focusing on production-grade backend architecture, authentication, security, payment integration, and database monitoring.
 
-📌### Features:
-🔐 ##Authentication & Authorization:
+📌 Features:
+🔐 Authentication & Authorization:
 
 -> Email/password registration
 
@@ -14,7 +14,7 @@ This project was developed as a training/practice project, focusing on productio
 -> User Managment system
 
 
-🛡️ ##Security:
+🛡️ Security:
 
 -> CSRF protection
 
@@ -29,7 +29,7 @@ This project was developed as a training/practice project, focusing on productio
 -> Secure cookie handling
 
 
-🧭## System Architecture:
+🧭 System Architecture:
 
 -> MVC structure
 
@@ -40,8 +40,8 @@ This project was developed as a training/practice project, focusing on productio
 -> Error handling middleware
 
 
-🛠️ ##CMS (Admin Panel)
-#AdminJS panel for managing:
+🛠️ CMS (Admin Panel)
+AdminJS panel for managing:
 
 -> Users
 
@@ -54,7 +54,7 @@ This project was developed as a training/practice project, focusing on productio
 -> Restaurant settings
 
 
-📅 ##Restaurant Reservation Logic
+📅 Restaurant Reservation Logic
 
 -> Make reservation
 
@@ -69,7 +69,7 @@ This project was developed as a training/practice project, focusing on productio
 -> User reservation history
 
 
-###Project Structure:
+Project Structure:
 Restaurant-Project/
 │── README.md
 │── package.json
@@ -92,13 +92,14 @@ Restaurant-Project/
     ├── bundle.js
     ├── entry.js
 
-### screenshots:
+-> screenshots:
 
-##API responses:
+API responses:
 
- Registeration
-<img src="screenshots/postman/register.PNG" width="450">
+#Registeration                                              #Registeration
+<img src="screenshots/postman/register.PNG" width="450">    <img src="screenshots/postman/register.PNG" width="450">
 
+                                                            
 
 🚀 Installation & Setup
 1️⃣ Clone repository
