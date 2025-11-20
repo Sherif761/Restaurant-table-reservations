@@ -94,13 +94,11 @@ Restaurant-Project/
 
 -> screenshots:
 
-API responses:
-
-## Postman Responses
+##API responses:
 
 | Get Users | Create User |
 |----------|-------------|
-| <img src="screenshots/postman/register.png" width="300"/> | <img src="screenshots/postman/register.png" width="300"/> |
+| <img src="screenshots/postman/register.PNG" width="300"/> | <img src="screenshots/postman/register.png" width="300"/> |
  
 
                                                             
