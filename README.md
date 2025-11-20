@@ -96,7 +96,7 @@ Restaurant-Project/
 
 API responses:
 
-![Registeration](screenshots/register.png)
+![Registeration](screenshots/register.PNG)
 
 
 🚀 Installation & Setup
