@@ -96,7 +96,8 @@ Restaurant-Project/
 
 API responses:
 
-![Registeration](screenshots/postman/register.PNG)
+## Registeration
+<img src="screenshots/postman/register.PNG" width="450">
 
 
 🚀 Installation & Setup
