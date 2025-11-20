@@ -96,8 +96,8 @@ Restaurant-Project/
 
 API responses:
 
-#Registeration                                              #Registeration
-<img src="screenshots/postman/register.PNG" width="450">    <img src="screenshots/postman/register.PNG" width="450">
+#Registeration                                                                    #Registeration
+<img src="screenshots/postman/register.PNG" width="450">                          <img src="screenshots/postman/register.PNG" width="450">
 
                                                             
 
