@@ -112,7 +112,7 @@ Restaurant-Project/
 |----------|-------------|
 | <img src="screenshots/postman/all_tables.PNG" width="400"/> | <img src="screenshots/postman/reservation.PNG" width="400"/> | 
 
-| Register Users | User already registered (with already registered email) |
+| Unavailbale time for reservation | User already registered (with already registered email) |
 |----------|-------------|
 | <img src="screenshots/postman/register.PNG" width="400"/> | <img src="screenshots/postman/already_registered.PNG" width="400"/> | 
 
