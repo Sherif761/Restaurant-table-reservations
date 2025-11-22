@@ -2,6 +2,21 @@
 A full backend system for managing restaurant reservations, built with Node.js, Express, and MongoDB.
 This project was developed as a training/practice project, focusing on production-grade backend architecture, authentication, authorization, session handling, API's handling, cms, security, and database monitoring.
 
+# 📅 Restaurant Reservation Logic arrangment
+
+-> Make reservation request.
+
+-> check for the requested number of chairs 
+
+-> Check table availability
+
+-> Prevent double booking
+
+-> Time-slot validation
+
+-> User reservation history
+
+
 # 📌 Features:
 
 ## 🔐 Authentication & Authorization:
