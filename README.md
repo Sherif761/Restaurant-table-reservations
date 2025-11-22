@@ -71,7 +71,6 @@ AdminJS panel for managing:
 
 # Project Structure:
 
-````md
 ```md
 Restaurant-Project/
 ├── README.md
@@ -102,8 +101,8 @@ Restaurant-Project/
 
 └── controllers/
     └── AdminJS.js
-yaml
-Copy code
+```
+
 
 
 # screenshots:
