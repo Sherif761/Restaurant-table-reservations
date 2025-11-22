@@ -192,25 +192,33 @@ Restaurant-Project/
 | <img src="screenshots/Admin/invalid_tabelid.PNG" width="400"/> |  
 
 
-🚀 Installation & Setup
-1️⃣ Clone repository
+# 🚀 Installation & Setup:
+
+## 1️⃣ Clone repository:
+
 git clone https://github.com/Sherif761/restaurant-reservation-system.git
+
 cd restaurant-reservation-system
 
-2️⃣ Install dependencies
+## 2️⃣ Install dependencies:
+
 npm install
 
-3️⃣ Create .env
+## 3️⃣ Create .env:
+
 PORT=5000
+
 MONGO_URI=your_mongo_connection_string
+
 SESSION_SECRET=yourSecret
 
 
-4️⃣ Start server
+## 4️⃣ Start server:
+
 npm start
 
 
-🧱 Technologies Used:
+# 🧱 Technologies Used:
 
 -> Node.js
 
@@ -235,8 +243,8 @@ npm start
 -> Helmet, CORS
 
 
-🎯 Purpose of This Project:
-This backend system is built as a practical demonstration of:
+# 🎯 Purpose of This Project:
+**This backend system is built as a practical demonstration of:**
 
 -> Building production-level backend architecture
 
@@ -255,7 +263,7 @@ This backend system is built as a practical demonstration of:
 -> Managing database using mongodb and mongoose drivers
 
 
-🧑‍💻 Author
+# 🧑‍💻 Author
 
 Sherif Hassan — Backend Developer
 🌐 LinkedIn: www.linkedin.com/in/shrief-hassan-1a31a032b
