@@ -1,3 +1,6 @@
+////////DB connection using mongodb driver
+
+
 const { MongoClient } = require("mongodb")
 
 let dbconnection
@@ -15,18 +18,3 @@ module.exports = {
     })},
     getdb: ()=> dbconnection
 }
-
-// const loginSchema = new mongoose.schema({
-//     name: {
-//         type:string,
-//         required: true
-//     },
-//     password: {
-//         type:string,
-//         required: true
-//     }
-// })
-
-// const collection = new mongoose.schema("login" , loginSchema)
-
-// module.exports = collection
