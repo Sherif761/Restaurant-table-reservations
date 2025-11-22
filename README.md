@@ -88,9 +88,16 @@ Restaurant-Project/
 |   ├── tables.js
 │
 |── 📂 .adminjs/
-    ├── adminJS.js
-    ├── bundle.js
-    ├── entry.js
+|   ├── bundle.js
+|   ├── entry.js
+|
+|── 📂 components/
+|   ├── dashboard.jsx
+|   ├── (AdminJS created files)
+|
+|── 📂 controllers/
+|   ├── AdminJS.js
+
 
 # screenshots:
 
