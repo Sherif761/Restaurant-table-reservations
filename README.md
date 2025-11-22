@@ -152,11 +152,11 @@ Restaurant-Project/
 
 | All Restaurant Tables Reservations(1) | All Restaurant Tables Reservations(2) |
 |----------|-------------|
-| <img src="screenshots/Admin/all_tables.PNG" width="400"/> | <img src="screenshots/Admin/reservation.PNG" width="400"/> | 
+| <img src="screenshots/Admin/all_tables_res.PNG" width="400"/> | <img src="screenshots/Admin/all_tables_res2.PNG" width="400"/> | 
 
 | Choosen Table Reservations(1) | Choosen Table Reservations(2) |
 |----------|-------------|
-| <img src="screenshots/Admin/res_timeUnavailable.PNG" width="400"/> | <img src="screenshots/Admin/no_reservation_to_be_cancelled.PNG" width="400"/> | 
+| <img src="screenshots/Admin/specific_table_res.PNG" width="400"/> | <img src="screenshots/Admin/specific_table_res2.PNG" width="400"/> | 
 
 | Invalid TableID | 
 |----------|
