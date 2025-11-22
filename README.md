@@ -175,9 +175,7 @@ npm install
 PORT=5000
 MONGO_URI=your_mongo_connection_string
 SESSION_SECRET=yourSecret
-GOOGLE_CLIENT_ID=xxxx
-GOOGLE_CLIENT_SECRET=xxxx
-PAYMENT_API_KEY=xxxx
+
 
 4️⃣ Start server
 npm start
