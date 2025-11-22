@@ -1,3 +1,5 @@
+/////////////Adminjs Dashboard configuration///////////////
+
 import express from "express";
 const app = express();
 
@@ -14,32 +16,24 @@ import path from 'path'
 
 import getdb from '../config/mongodb.js'
 
-console.log(
-  'Resolved path =',
-  path.resolve('./components/dashboard.jsx')
-)
+// console.log(
+//   'Resolved path =',
+//   path.resolve('./components/dashboard.jsx')
+// )
 
 AdminJS.registerAdapter({ Database, Resource })
-// import mongoose from "mongoose";
-// const { connect, connection, Schema, model } = mongoose;
+
 
 const componentLoader = new ComponentLoader();
 const Components = {
     Dashboard: componentLoader.add('Dashboard', path.join(process.cwd(), 'components', 'dashboard.jsx')),
-    // other custom components
 }  
-// AdminJS.bundle =  AdminJSBundler.bundle({ destinationDir: './components'})
 
 const adminOptions = {
   rootPath: '/admin',
   componentLoader,
   dashboard: {
     component: Components.Dashboard,
-    // Optional: you can add a handler to fetch data from backend to dashboard:
-    // handler: async (req, res, context) => {
-    //   const item = await table.findOne({ tableId: 1 });
-    //   return { item };
-    // },
   },
   resources: [
     {
@@ -51,22 +45,19 @@ const adminOptions = {
         
         properties: {
           tableId: {
-            label: 'Table ID',   // custom label shown in admin
+            label: 'Table ID',   
           },
           maxCapacity: {
             label: 'Max Capacity',
           },
           minCapacity: {
             label: 'Min Capacity',
-            // type: 'richtext', // Optional: nicer editor
           },
           available_range: {
             label: "Available Rangeeee",
-            // type: 'richtext', // Optional: nicer editor
           },
           no_chairs: {
             label: 'number of chairs in whole restaurant',
-            // type: 'richtext', // Optional: nicer editor
           },
         },
       },
@@ -80,7 +71,7 @@ const adminOptions = {
         filterProperties: ['name', 'preparation_time'],
       },
     }
-  ],//listProperties, editProperties, filterProperties should be like the schema
+  ],
   branding: {
     companyName: 'My CMS Dashboard',
     softwareBrothers: false,
@@ -88,33 +79,26 @@ const adminOptions = {
   },
 };
 
-console.log("Bundle component path =", adminOptions.dashboard.component)
+// console.log("Bundle component path =", adminOptions.dashboard.component)
 const admin = new AdminJS(adminOptions);
-// const adminRouter = buildAuthenticatedRouter(
-  // admin
-// );
 
 const adminRouter = AdminJSExpress.buildRouter(admin);
-// app.use(admin.options.rootPath, adminRouter); //while vistiting /admin route call adminRouter fn 
 
-adminRouter.get('/api/myObject', async (req, res) => {
+adminRouter.get('/api/myObject', async (req, res) => { //handling get request for all tables or with tableID
   const searchTableId = req.query.tableID;
-  console.log('tableid', typeof searchTableId)
   let items = {}
   if(searchTableId){
       items = await table.findOne({tableId: Number(searchTableId)});
-      console.log('fetched table with tableid', items)
+      // console.log('fetched table with tableid', items)
   }else{
      items = await table.find();
-    console.log('fetched all tables', items)
+    // console.log('fetched all tables', items)
   }
-//  console.log('dateeeeeeeeeeeeee',items[0].reserve[0].reserve_date)
   res.json(items);
 });
 
-adminRouter.post('/admin/api/cancelReservation', async (req, res) => {
+adminRouter.post('/admin/api/cancelReservation', async (req, res) => {// fn for admin can cancel any reservation
   try{
-    console.log("..................")
     const ID = req.body.tableId;
    const tablee = await table.findOne({tableId: Number(searchTableId)})
    const email = null 
