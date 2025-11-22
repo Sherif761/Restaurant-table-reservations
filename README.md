@@ -140,27 +140,27 @@ Restaurant-Project/
 
 | Home | Create Table |
 |----------|-------------|
-| <img src="screenshots/postman/home.PNG" width="400"/> | <img src="screenshots/postman/already_registered.PNG" width="400"/> | 
+| <img src="screenshots/postman/home.PNG" width="400"/> | <img src="screenshots/postman/create_table.PNG" width="400"/> | 
  
-| User Login | Invalid Credentials |
+| Create Meal | Meals |
 |----------|-------------|
-| <img src="screenshots/postman/login.PNG" width="400"/> | <img src="screenshots/postman/unauthorized.PNG" width="400"/> | 
+| <img src="screenshots/postman/create_meal.PNG" width="400"/> | <img src="screenshots/postman/meals.PNG" width="400"/> | 
 
-| User Reservations | Cancelled Reservation |
+| Tables | Monitoring Reservations/Tables (Home)|
 |----------|-------------|
-| <img src="screenshots/postman/userReservations.PNG" width="400"/> | <img src="screenshots/postman/cancelReservation.PNG" width="400"/> | 
+| <img src="screenshots/postman/tables.PNG" width="400"/> | <img src="screenshots/postman/control.PNG" width="400"/> | 
 
-| All Restaurant Tables | Successful Reservation |
+| All Restaurant Tables Reservations(1) | All Restaurant Tables Reservations(2) |
 |----------|-------------|
 | <img src="screenshots/postman/all_tables.PNG" width="400"/> | <img src="screenshots/postman/reservation.PNG" width="400"/> | 
 
-| Unavailbale Time For Reservation | User Cancelling Reservation Which Is Not Reserved By Him |
+| Choosen Table Reservations(1) | Choosen Table Reservations(2) |
 |----------|-------------|
 | <img src="screenshots/postman/res_timeUnavailable.PNG" width="400"/> | <img src="screenshots/postman/no_reservation_to_be_cancelled.PNG" width="400"/> | 
 
-| Available Slots For Table | 
+| Invalid TableID | 
 |----------|
-| <img src="screenshots/postman/Available_slots.PNG" width="400"/> |  
+| <img src="screenshots/postman/invalid_tableid.PNG" width="400"/> |  
 
 
 🚀 Installation & Setup
