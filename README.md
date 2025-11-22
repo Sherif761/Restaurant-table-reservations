@@ -116,11 +116,9 @@ Restaurant-Project/
 |----------|-------------|
 | <img src="screenshots/postman/res_timeUnavailable.PNG" width="400"/> | <img src="screenshots/postman/no_reservation_to_be_cancelled.PNG" width="400"/> | 
 
-
-
-| Register Users | User already registered (with already registered email) |
-|----------|-------------|
-| <img src="screenshots/postman/register.PNG" width="400"/> | <img src="screenshots/postman/already_registered.PNG" width="400"/> | 
+| Available slots for table | 
+|----------|
+| <img src="screenshots/postman/Available_slots.PNG" width="400"/> | 
                                                             
 
 🚀 Installation & Setup
