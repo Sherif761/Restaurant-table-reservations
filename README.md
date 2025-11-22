@@ -15,7 +15,7 @@ This project was developed as a training/practice project, focusing on productio
 -> User Managment system
 
 
-🛡️ Security:
+## 🛡️ Security:
 
 -> CSRF protection
 
@@ -30,7 +30,7 @@ This project was developed as a training/practice project, focusing on productio
 -> Secure cookie handling
 
 
-🧭 System Architecture:
+## 🧭 System Architecture:
 
 -> MVC structure
 
@@ -41,8 +41,8 @@ This project was developed as a training/practice project, focusing on productio
 -> Error handling middleware
 
 
-🛠️ CMS (Admin Panel)
-AdminJS panel for managing:
+## 🛠️ CMS (Admin Panel)
+**AdminJS panel for managing**:
 
 -> Users
 
@@ -55,11 +55,11 @@ AdminJS panel for managing:
 -> Restaurant settings
 
 
-📅 Restaurant Reservation Logic
+## 📅 Restaurant Reservation Logic
 
 -> Make reservation
 
--> Cancel reservation
+-> Cancel/Edit reservation
 
 -> Check table availability
 
