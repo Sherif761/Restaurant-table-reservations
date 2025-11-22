@@ -1,3 +1,5 @@
+//////connection with db using mongoose driver///////
+
 import {mongoose} from "mongoose";
 
 mongoose.connect('mongodb://localhost:27017/Restaurant-reservations')
