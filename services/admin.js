@@ -1,26 +1,23 @@
 const{getdb} = require('../config/mongodb')
 
-notUser = function(req, res, next){
+notUser = function(req, res, next){ // fn for checking the request coming from logged in user or not
     // console.log(req.user)
     // console.log(req.sessionID)
-
     if(!req.user) return res.redirect('/login')
-    // console.log(req.user)
-      
     next()
 }
 
-adminFunc =  function(req, res, next){
+adminFunc =  function(req, res, next){ // fn for checking the request coming from userRole which is admin
     role = req.user.userRole
     if (role == "admin"){
-        console.log(req.user)
+        // console.log(req.user)
         return res.redirect('/admin');
     } 
     // else res.status(200).json({ success: false, message:`wellcome admin ${req.user.name}` });
     next()
 }
 
-adminTables = async function(req, res, next){
+adminTables = async function(req, res, next){ // fn for pushing tables by admin (without adminjs dashboard)
     try{
         let table = {}
         let m = 0
@@ -55,7 +52,7 @@ adminTables = async function(req, res, next){
     
      
      await getdb().collection('tables').insertOne(table)
-     console.log(table)
+     // console.log(table)
      next()
     }catch(err){
         res.status(400).send({message: "server error"})
@@ -63,7 +60,7 @@ adminTables = async function(req, res, next){
     
  }
 
- adminMeals = async function(req, res, next){
+ adminMeals = async function(req, res, next){ // fn for adding meals by admin (without adminjs dashboard)
     let meals = {
          name: req.body.mealName,
          time: req.body.mealTime
