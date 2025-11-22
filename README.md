@@ -3,7 +3,7 @@ A full backend system for managing restaurant reservations, built with Node.js, 
 This project was developed as a training/practice project, focusing on production-grade backend architecture, authentication, security, payment integration, and database monitoring.
 
 📌 # **Features**:
-##🔐 Authentication & Authorization:
+
 
 -> Email/password registration
 
