@@ -113,7 +113,7 @@ adminRouter.post('/admin/api/cancelReservation', async (req, res) => {// fn for 
         let y = false;  // Variable to control the break flag
     if(tablee.length != 0){
       for ( i = 0; i < tablee.reserve.length; i++) {
-            console.log(i)
+            // console.log(i)
             if (tablee.reserve[i].reserve_date === datePart) {
                 for ( n = 0; n < tablee.reserve[i].reserve_array.length; n++) {
                     if (tablee.reserve[i].reserve_array[n][0] === startTime && tablee.reserve[i].reserve_array[n][1] === endTime) {
@@ -126,7 +126,7 @@ adminRouter.post('/admin/api/cancelReservation', async (req, res) => {// fn for 
                 if (y) break; // Break the outer loop if the inner loop found a match
             }
         }
-    console.log(i)
+    // console.log(i)
         if (neededArray) {
             // Update the table if we found the item
             // console.log(z)
