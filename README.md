@@ -160,7 +160,7 @@ Restaurant-Project/
 
 | Invalid TableID | 
 |----------|
-| <img src="screenshots/Admin/invalid_tableid.PNG" width="400"/> |  
+| <img src="screenshots/Admin/invalid_tabelid.PNG" width="400"/> |  
 
 
 🚀 Installation & Setup
