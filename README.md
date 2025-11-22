@@ -214,6 +214,8 @@ npm start
 
 -> Node.js
 
+-> React.js
+
 -> Express.js
 
 -> MongoDB + Mongoose
