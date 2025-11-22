@@ -125,15 +125,15 @@ Restaurant-Project/
 
 | Collections | login-signup collection |
 |----------|-------------|
-| <img src="screenshots/postman/collections.PNG" width="400"/> | <img src="screenshots/postman/login-signup.PNG" width="400"/> | 
+| <img src="screenshots/DB/collections.PNG" width="400"/> | <img src="screenshots/DB/login-signup.PNG" width="400"/> | 
  
 | Meals Collection | Reservations Collection |
 |----------|-------------|
-| <img src="screenshots/postman/meals.PNG" width="400"/> | <img src="screenshots/postman/reservations.PNG" width="400"/> | 
+| <img src="screenshots/DB/meals.PNG" width="400"/> | <img src="screenshots/DB/reservations.PNG" width="400"/> | 
 
 | Tables Collection(1)  | Tables Collection(2) |
 |----------|-------------|
-| <img src="screenshots/postman/table_1.PNG" width="400"/> | <img src="screenshots/postman/table_2.PNG" width="400"/> | 
+| <img src="screenshots/DB/table_1.PNG" width="400"/> | <img src="screenshots/DB/table_2.PNG" width="400"/> | 
 
 
 🚀 Installation & Setup
