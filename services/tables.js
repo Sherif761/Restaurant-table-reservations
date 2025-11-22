@@ -12,7 +12,7 @@ let endTime
 let endHour
 let endMinute 
 
-tables = async function(req, res, next){
+tables = async function(req, res, next){ // fn for getting all tables from db
     try{
         allTables = await getdb().collection('tables').find({}).toArray()
         res.send(allTables)
@@ -22,7 +22,12 @@ tables = async function(req, res, next){
     }
 }
 
-async function checkChairs(req, datePart, startHour, startMinute, endHour, endMinute){
+async function checkChairs(req, datePart, startHour, startMinute, endHour, endMinute){ // Function to check whether the requested number of chairs is available.
+// The admin defines the total number of chairs in the restaurant, and for each reservation request,
+// the system calculates all active reservations for the same time and location.
+// By subtracting the total reserved chairs from the total available chairs,
+// the function determines if the requested reservation can be accommodated.
+ 
     try{
         let sum = 0
         let chairs_array = []
@@ -30,27 +35,24 @@ async function checkChairs(req, datePart, startHour, startMinute, endHour, endMi
         
 
          reserveArray = await getdb().collection('tables').aggregate([
-            { $unwind: "$reserve" },  // Step 1: Break down the reserve array
-            { $match: { "reserve.reserve_date": datePart } }, // Step 2: Keep only matching datePart
-            { $project: { _id: 0, reserve_array: "$reserve.reserve_array" } } // Step 3: Keep only reserve_array
+            { $unwind: "$reserve" },  
+            { $match: { "reserve.reserve_date": datePart } },
+            { $project: { _id: 0, reserve_array: "$reserve.reserve_array" } }
           ]).toArray();
-                 
-           console.log(reserveArray)
-       
+                
+        // console.log(reserveArray)
+        
         if(reserveArray.length > 0) {
-            console.log("aaaaaaaa")
             for(i = 0; i<reserveArray.length; i++){
                 for(q = 0 ; q< reserveArray[i].reserve_array.length ; q++){
                     array_chairs.push(reserveArray[i].reserve_array[q])
                 }
-                
             }
         }
         
-        console.log(array_chairs)
+        // console.log(array_chairs)
         for(i = 0 ; i<array_chairs.length ; i++){
             if((Number(array_chairs[i][0].split(":")[0]) < startHour) && (startHour < Number(array_chairs[i][1].split(":")[0]))){
-                console.log("bbbbbbb")
                 chairs_array.push(Number(array_chairs[i][2]))
             }
             else if(Number(array_chairs[i][0].split(":")[0]) === startHour && startHour === Number(array_chairs[i][1].split(":")[0])){
@@ -61,11 +63,9 @@ async function checkChairs(req, datePart, startHour, startMinute, endHour, endMi
 
             }
             else if(Number(array_chairs[i][0].split(":")[0]) === startHour){
-                console.log("ccccccc")
                  if(Number(array_chairs[i][0].split(":")[1]) <= startMinute){
                     chairs_array.push(Number(array_chairs[i][2]))
                  }else if(endHour >= array_chairs[i][1].split(":")[0]){
-                    console.log("ddddddd")
                     chairs_array.push(Number(array_chairs[i][2]))
                  }
             }
@@ -81,10 +81,10 @@ async function checkChairs(req, datePart, startHour, startMinute, endHour, endMi
             }else if(Number(array_chairs[i][1].split(":")[0]) === startHour && startMinute < Number(array_chairs[i][1].split(":")[1]))
                 chairs_array.push(Number(array_chairs[i][2]))
         }
-        console.log(chairs_array)
+        // console.log(chairs_array)
         for(i = 0 ; i< chairs_array.length ; i++) sum += chairs_array[i]
         available_chairs = Number(table.no_chairs) - sum
-        console.log(available_chairs)
+        // console.log(available_chairs)
         if((Number(table.maxCapacity) < Number(req.body.members)) || (Number(req.body.members) < Number(table.minCapacity)) ||  (Number(req.body.members) > available_chairs)){
             return false
         }
@@ -96,7 +96,7 @@ async function checkChairs(req, datePart, startHour, startMinute, endHour, endMi
     }
 }
 
-reserve = async function(req, res, next){
+reserve = async function(req, res, next){//fn for validate whether the slot selected can be reserved or not
     try{
         x = 0
         t = 0
@@ -118,7 +118,7 @@ reserve = async function(req, res, next){
         if(req.body.meals?.length > 0){//If req.body.meals is undefined, ?.length prevents the error and returns undefined, making the condition safely evaluate to false.
             for(m = 0 ; m< req.body.meals.length ; m++){
                 mealArray.push(await getdb().collection('meals').findOne({name: req.body.meals[m]}))
-                console.log(mealArray)
+                // console.log(mealArray)
                 expectedEndTime.push([startHour + Number(mealArray[m].preparation_time.split(":")[0]), startMinute + Number(mealArray[m].preparation_time.split(":")[1])])
                 if(expectedEndTime[m][1] > 59){
                     expectedEndTime[m][0]++
@@ -174,9 +174,7 @@ reserve = async function(req, res, next){
         if(startHour === endHour){
             if(startMinute >= endMinute) return res.status(400).send({message: "the selected time is unavailable"})
         }
-
-        // meal = await getdb().collection('tables').findOne({tableId: req.body.tableId})
-        console.log(req.body.meals)
+        // console.log(req.body.meals)
 
         for(i = 0 ; i<table.reserve.length; i++){
             if(table.reserve[i].reserve_date === datePart){
@@ -285,7 +283,7 @@ reserve = async function(req, res, next){
                 if(t && r) break
             }
         }
-        console.log(`here${t} and ${r}`)
+        // console.log(`here${t} and ${r}`)
         if((!t && r) || (t && !r) )return res.status(400).send({message: "the selected time is unavailable"})
 
         if(!(Number(array[array.length - 1][1].split(":")[0]) === Number(maxHour))){
@@ -315,7 +313,7 @@ reserve = async function(req, res, next){
                 if(t && r) break
             }
         }
-        console.log(`hereee${t} and ${r}`)
+        // console.log(`hereee${t} and ${r}`)
         if((!t && r) || (t && !r) )return res.status(400).send({message: "the selected time is unavailable"})
 
         if(t && r) w = array.length - 1
@@ -323,7 +321,7 @@ reserve = async function(req, res, next){
         for(w  ; w<array.length - 1 ; w++){
             start = Number(array[w][1].split(":")[0])
             end = Number(array[w + 1][0].split(":")[0])
-                console.log(start, end)
+                // console.log(start, end)
             for(q = start ; q <= end ; q++){
                 if(q ===startHour){
                     if(startHour === start){
@@ -405,7 +403,7 @@ reserve = async function(req, res, next){
 
 
 
-reservedByUser = async function(req, res, next){
+reservedByUser = async function(req, res, next){ //fn for return user reservations
     try{
         userTables = await getdb().collection('reservations').find({user: req.user.email}).toArray()
         if(userTables.length === 0) return res.status(200).json({ message: 'there are no tables reserved for you!' });
@@ -416,27 +414,25 @@ reservedByUser = async function(req, res, next){
     }
 }
 
-unReservedTable = async function(req, res, next){
+unReservedTable = async function(req, res, next){ // fn for return available slots for table
     try{
-        console.log("heyyyyyyyyyyyyy")
         datePart = req.body.date; // "2025-01-25"
-        console.log(datePart)
-        console.log(req.body.tableId)
+        // console.log(datePart)
+        // console.log(req.body.tableId)
         available_array = []
         table = await getdb().collection('tables').findOne({tableId: Number(req.body.tableId)})
         // console.log(table)
         minRange = table.available_range.split("-")[0]
         maxRange = table.available_range.split("-")[1]
-        // console.log("kkk")
+        
         minHour = table.available_range.split(":")[0]
         minMin = table.available_range.split(":")[1].split("-")[0]
         maxHour = table.available_range.split("-")[1].split(":")[0]
         maxMin = table.available_range.split("-")[1].split(":")[1]
-        // console.log("kkk")
+
         for(i = 0 ; i< table.reserve.length ; i++){
             if(table.reserve[i].reserve_date === datePart){
                 x = table.reserve[i].reserve_array
-                // console.log(x)
                 if(x[0][0].split(":")[0] != minHour){
                     // console.log("before")
                     available_array.push([minRange, x[0][0]])
@@ -453,12 +449,10 @@ unReservedTable = async function(req, res, next){
                         available_array.push([x[q][1], x[q+1][0]])
                     }
                 }
-                // console.log("hhhhh")
+
                 if(x[x.length - 1][1].split(":")[0] != maxHour){
-                    // console.log("eeeeee")
                     available_array.push([x[x.length - 1][1], maxRange])
                 }else if(x[x.length - 1][1].split(":")[1] != maxMin){
-                    // console.log("eeeeee")
                     available_array.push([x[x.length - 1][1], maxRange])
                 }
                 break
@@ -472,9 +466,8 @@ unReservedTable = async function(req, res, next){
     }
 }
 
-// availableTables
 
-cancel = async function(req, res, next){
+cancel = async function(req, res, next){ // fn for cancell user reservation
     try{
         result = 0
         z = 0
@@ -493,7 +486,7 @@ cancel = async function(req, res, next){
             let y = false;  // Variable to control the break flag
         
             for ( i = 0; i < table.reserve.length; i++) {
-                console.log(i)
+                // console.log(i)
                 if (table.reserve[i].reserve_date === datePart) {
                     for ( n = 0; n < table.reserve[i].reserve_array.length; n++) {
                         if (table.reserve[i].reserve_array[n][0] === startTime && table.reserve[i].reserve_array[n][1] === endTime) {
@@ -505,7 +498,7 @@ cancel = async function(req, res, next){
                     if (y) break; // Break the outer loop if the inner loop found a match
                 }
             }
-        console.log(i)
+        // console.log(i)
             if (neededArray) {
                 // Update the table if we found the item
                 // console.log(z)
