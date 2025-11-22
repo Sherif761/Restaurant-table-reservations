@@ -138,17 +138,29 @@ Restaurant-Project/
 
 ## Admin Dashboard:
 
-| Collections | login-signup collection |
+| Home | Create Table |
 |----------|-------------|
-| <img src="screenshots/DB/collections.PNG" width="400"/> | <img src="screenshots/DB/login-signup.PNG" width="400"/> | 
+| <img src="screenshots/postman/home.PNG" width="400"/> | <img src="screenshots/postman/already_registered.PNG" width="400"/> | 
  
-| Meals Collection | Reservations Collection |
+| User Login | Invalid Credentials |
 |----------|-------------|
-| <img src="screenshots/DB/meals.PNG" width="400"/> | <img src="screenshots/DB/reservations.PNG" width="400"/> | 
+| <img src="screenshots/postman/login.PNG" width="400"/> | <img src="screenshots/postman/unauthorized.PNG" width="400"/> | 
 
-| Tables Collection(1)  | Tables Collection(2) |
+| User Reservations | Cancelled Reservation |
 |----------|-------------|
-| <img src="screenshots/DB/table_1.PNG" width="400"/> | <img src="screenshots/DB/table_2.PNG" width="400"/> | 
+| <img src="screenshots/postman/userReservations.PNG" width="400"/> | <img src="screenshots/postman/cancelReservation.PNG" width="400"/> | 
+
+| All Restaurant Tables | Successful Reservation |
+|----------|-------------|
+| <img src="screenshots/postman/all_tables.PNG" width="400"/> | <img src="screenshots/postman/reservation.PNG" width="400"/> | 
+
+| Unavailbale Time For Reservation | User Cancelling Reservation Which Is Not Reserved By Him |
+|----------|-------------|
+| <img src="screenshots/postman/res_timeUnavailable.PNG" width="400"/> | <img src="screenshots/postman/no_reservation_to_be_cancelled.PNG" width="400"/> | 
+
+| Available Slots For Table | 
+|----------|
+| <img src="screenshots/postman/Available_slots.PNG" width="400"/> |  
 
 
 🚀 Installation & Setup
