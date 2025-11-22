@@ -10,6 +10,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@adminjs/bundler": "^3.0.0",
+    "@adminjs/design-system": "^4.1.1",
     "@adminjs/express": "^6.1.1",
     "@adminjs/mongoose": "^4.1.0",
     "adminjs": "^7.8.17",
@@ -26,6 +28,8 @@
     "mongoose": "^8.19.3",
     "nodemon": "^3.1.9",
     "passport": "^0.7.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }

@@ -418,10 +418,12 @@ reservedByUser = async function(req, res, next){
 
 unReservedTable = async function(req, res, next){
     try{
+        console.log("heyyyyyyyyyyyyy")
         datePart = req.body.date; // "2025-01-25"
-        // console.log(datePart)
+        console.log(datePart)
+        console.log(req.body.tableId)
         available_array = []
-        table = await getdb().collection('tables').findOne({tableId: req.body.tableId})
+        table = await getdb().collection('tables').findOne({tableId: Number(req.body.tableId)})
         // console.log(table)
         minRange = table.available_range.split("-")[0]
         maxRange = table.available_range.split("-")[1]
@@ -463,7 +465,7 @@ unReservedTable = async function(req, res, next){
             }
         }
         if(available_array.length === 0) return res.status(200).json({ message: 'this table is not available now!' });
-        res.send(available_array)
+        res.send({Available_slots: available_array})
         next()
         }catch(err){
             res.status(400).send({message: `${err}`})
@@ -523,7 +525,7 @@ cancel = async function(req, res, next){
         }
         // console.log(z)
         // console.log(result)
-        if(!result.modifiedCount || !z.modifiedCount) return res.status(400).send({message: `you have not reserved this time!`})
+        if(!result.modifiedCount || !z.modifiedCount) return res.status(400).send({message: `There is no reservation for you at this time!`})
         res.status(200).json({ success: true, message: 'reservation has been cancelled!' });
         next()
         }catch(err){

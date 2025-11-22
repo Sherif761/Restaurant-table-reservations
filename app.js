@@ -1,5 +1,13 @@
 // npm run start
 
+// git config --global user.name "Sherif"
+// git config --global user.email "your-email@example.com"
+
+// git add .
+// git commit -m "Initial commit"
+// git branch -M main
+// git push -u origin main
+
 let express = require("express");
 let app = express();
 const https = require('https');
@@ -13,7 +21,7 @@ const {register, indicator} = require('./services/authentication')
 const {notUser, adminFunc, adminFuncTables, adminFuncMeals, chairs} = require('./services/admin')
 const {tables, reserve, cancel, reservedByUser, unReservedTable} = require('./services/tables')
 
-const {admin, adminRouter} = require('./.adminjs/AdminJS')
+const {admin, adminRouter} = require('./controllers/AdminJS')
 
 let session = require("express-session")
 // const cookieSession = require('cookie-session');
@@ -74,7 +82,7 @@ app.use(admin.options.rootPath,notUser, (req, res, next)=>{
         return next()
     }
     console.log('5odd')
-    return res.redirect('/login');
+    return res.send({mess: "Unauthorized"});
 }, adminRouter); ////while vistiting /admin route call adminRouter fn 
 
 app.get('/register', (req, res)=>{
