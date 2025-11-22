@@ -70,7 +70,7 @@ This project was developed as a training/practice project, focusing on productio
 -> Restaurant settings
 
 
-## 📅 Restaurant Reservation Logic
+## 📅 Features Offered:
 
 -> Make reservation
 
