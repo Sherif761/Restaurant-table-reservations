@@ -196,7 +196,7 @@ Restaurant-Project/
 
 ## 1️⃣ Clone repository:
 
-git clone https://github.com/Sherif761/restaurant-reservation-system.git
+git clone https://github.com/Sherif761/Restaurant-table-reservations.git
 
 cd restaurant-reservation-system
 
