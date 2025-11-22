@@ -140,27 +140,27 @@ Restaurant-Project/
 
 | Home | Create Table |
 |----------|-------------|
-| <img src="screenshots/postman/home.PNG" width="400"/> | <img src="screenshots/postman/create_table.PNG" width="400"/> | 
+| <img src="screenshots/Admin/home.PNG" width="400"/> | <img src="screenshots/Admin/create_table.PNG" width="400"/> | 
  
 | Create Meal | Meals |
 |----------|-------------|
-| <img src="screenshots/postman/create_meal.PNG" width="400"/> | <img src="screenshots/postman/meals.PNG" width="400"/> | 
+| <img src="screenshots/Admin/create_meal.PNG" width="400"/> | <img src="screenshots/Admin/meals.PNG" width="400"/> | 
 
 | Tables | Monitoring Reservations/Tables (Home)|
 |----------|-------------|
-| <img src="screenshots/postman/tables.PNG" width="400"/> | <img src="screenshots/postman/control.PNG" width="400"/> | 
+| <img src="screenshots/Admin/tables.PNG" width="400"/> | <img src="screenshots/Admin/control.PNG" width="400"/> | 
 
 | All Restaurant Tables Reservations(1) | All Restaurant Tables Reservations(2) |
 |----------|-------------|
-| <img src="screenshots/postman/all_tables.PNG" width="400"/> | <img src="screenshots/postman/reservation.PNG" width="400"/> | 
+| <img src="screenshots/Admin/all_tables.PNG" width="400"/> | <img src="screenshots/Admin/reservation.PNG" width="400"/> | 
 
 | Choosen Table Reservations(1) | Choosen Table Reservations(2) |
 |----------|-------------|
-| <img src="screenshots/postman/res_timeUnavailable.PNG" width="400"/> | <img src="screenshots/postman/no_reservation_to_be_cancelled.PNG" width="400"/> | 
+| <img src="screenshots/Admin/res_timeUnavailable.PNG" width="400"/> | <img src="screenshots/Admin/no_reservation_to_be_cancelled.PNG" width="400"/> | 
 
 | Invalid TableID | 
 |----------|
-| <img src="screenshots/postman/invalid_tableid.PNG" width="400"/> |  
+| <img src="screenshots/Admin/invalid_tableid.PNG" width="400"/> |  
 
 
 🚀 Installation & Setup
