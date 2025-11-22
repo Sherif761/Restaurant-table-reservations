@@ -69,15 +69,17 @@ AdminJS panel for managing:
 -> User reservation history
 
 
-Project Structure:
+# Project Structure:
+
 Restaurant-Project/
 │── README.md
 │── package.json
 │── app.js
 │── test.html
 |── test.js
-│── .env
-│
+│── 📂 public/
+│   ├── 📂 images/
+       
 ├── 📂 config/
 │   ├── mongodb.js
 │   ├── schemas.js
