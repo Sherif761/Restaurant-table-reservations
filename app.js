@@ -1,38 +1,24 @@
-// npm run start
-
-// git config --global user.name "Sherif"
-// git config --global user.email "your-email@example.com"
-
-// git add .
-// git commit -m "Initial commit"
-// git branch -M main
-// git push -u origin main
-
 let express = require("express");
 let app = express();
 const https = require('https');
 const fs = require('fs')
 const PORT = 5500;
 const path = require('path')
-let db 
-
-const {connectiondb , getdb} = require('./config/mongodb')
-const {register, indicator} = require('./services/authentication')
-const {notUser, adminFunc, adminFuncTables, adminFuncMeals, chairs} = require('./services/admin')
-const {tables, reserve, cancel, reservedByUser, unReservedTable} = require('./services/tables')
-
-const {admin, adminRouter} = require('./controllers/AdminJS')
-
 let session = require("express-session")
-// const cookieSession = require('cookie-session');
 const csurf = require("csurf")
 const MongoStore = require("connect-mongo");
 const passport = require("passport");
 const cors = require('cors');
 const cookieParser = require("cookie-parser");
 
+const {connectiondb , getdb} = require('./config/mongodb')
+const {register, indicator} = require('./services/authentication')
+const {notUser, adminFunc, adminFuncTables, adminFuncMeals, chairs} = require('./services/admin')
+const {tables, reserve, cancel, reservedByUser, unReservedTable} = require('./services/tables')
+const {admin, adminRouter} = require('./controllers/AdminJS')
 
 
+let db 
 app.use(cookieParser());
 app.use(cors({
     origin: 'http://127.0.0.1:5501', // Specify the exact frontend URL here
@@ -44,7 +30,6 @@ app.use(cors({
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))//for parsing x-www-form-urlencoded
 app.use(express.static("public"));
-// app.use(cookieParser());
 
 app.use(session({
     // name: 'backend.sid',
@@ -70,18 +55,17 @@ app.set('views', path.join(process.cwd(), 'services')); //as the ejs file is ins
 app.use(passport.session())
 app.use(passport.initialize())
 
-// app.use(csurf());
-// app.use((req, res, next) => {// req.csrfToken() for generating token for that request provided by the csurf middleware,
-//     res.locals.csrfToken = req.csrfToken();//res.locals.csrfToken is saving that token in a local variable which can be accessed dynamically in ejs file 
-//     next();
-//   });
+app.use(csurf());
+app.use((req, res, next) => {// req.csrfToken() for generating token for that request provided by the csurf middleware,
+    res.locals.csrfToken = req.csrfToken();//res.locals.csrfToken is saving that token in a local variable which can be accessed dynamically in ejs file 
+    next();
+  });
 
 app.use(admin.options.rootPath,notUser, (req, res, next)=>{
     role = req.user.userRole
     if (role == "admin"){
         return next()
     }
-    console.log('5odd')
     return res.send({mess: "Unauthorized"});
 }, adminRouter); ////while vistiting /admin route call adminRouter fn 
 
@@ -95,20 +79,14 @@ app.post('/register', register, (req, res)=>{
 })
 
 app.get('/login', (req, res)=>{
-    // req.body._csrf = req.csrfToken()
+    req.body._csrf = req.csrfToken()
     res.render('login')
 })
 
 
 app.post('/login', passport.authenticate("local"), adminFunc , (req,res)=>{
-    console.log(req.user)
-    console.log("bodyyyyyyyyy",req.body)
-    // console.log("1")
-    // res.cookie("test_cookie", "test_value", { httpOnly: true })
-    console.log(req.cookies);//gets the cookie which has been sent from the browser not the server
-    // console.log(req.session.cookie)
+    console.log("logged in user object: ",req.user)
     res.status(200).json({ success: true, message: 'Login successful11', cookie: req.cookies  });
-    
 })
 
 app.get('/logout', (req , res)=>{
@@ -157,12 +135,6 @@ app.post('/api/tables/cancel', notUser, cancel, (req, res)=>{
 
 })
 
-app.put('/api/tables/order', notUser)
-
-
-
-
-
 
 
 const options = {
@@ -170,12 +142,6 @@ const options = {
     cert: fs.readFileSync('localhost.pem'),
   };
   
-
-
-// const server = createServer(options, app);
-// server.listen(`${PORT}`, () => {
-//     console.log(`Server is running on https://localhost:${PORT}`);
-//     });
 
 connectiondb((err) =>{
 if(!err){
