@@ -96,44 +96,44 @@ Restaurant-Project/
 
 ## API responses:
 
-| User registeration | User already registered (with already registered email) |
+| User Registeration | User Already Registered (with already registered email) |
 |----------|-------------|
 | <img src="screenshots/postman/register.PNG" width="400"/> | <img src="screenshots/postman/already_registered.PNG" width="400"/> | 
  
-| User login | Invalid credentials |
+| User Login | Invalid Credentials |
 |----------|-------------|
 | <img src="screenshots/postman/login.PNG" width="400"/> | <img src="screenshots/postman/unauthorized.PNG" width="400"/> | 
 
-| User reservations | Cancelled reservation |
+| User Reservations | Cancelled Reservation |
 |----------|-------------|
 | <img src="screenshots/postman/userReservations.PNG" width="400"/> | <img src="screenshots/postman/cancelReservation.PNG" width="400"/> | 
 
-| All restaurant tables | Successful reservation |
+| All Restaurant Tables | Successful Reservation |
 |----------|-------------|
 | <img src="screenshots/postman/all_tables.PNG" width="400"/> | <img src="screenshots/postman/reservation.PNG" width="400"/> | 
 
-| Unavailbale time for reservation | User cancelling reservation which is not reserved by him |
+| Unavailbale Time For Reservation | User Cancelling Reservation Which Is Not Reserved By Him |
 |----------|-------------|
 | <img src="screenshots/postman/res_timeUnavailable.PNG" width="400"/> | <img src="screenshots/postman/no_reservation_to_be_cancelled.PNG" width="400"/> | 
 
-| Available slots for table | 
+| Available Slots For Table | 
 |----------|
 | <img src="screenshots/postman/Available_slots.PNG" width="400"/> | 
 
                                                             
 ## Databse Structure:
 
-| User registeration | User already registered (with already registered email) |
+| Collections | login-signup collection |
 |----------|-------------|
-| <img src="screenshots/postman/register.PNG" width="400"/> | <img src="screenshots/postman/already_registered.PNG" width="400"/> | 
+| <img src="screenshots/postman/collections.PNG" width="400"/> | <img src="screenshots/postman/login-signup.PNG" width="400"/> | 
  
-| User login | Invalid credentials |
+| Meals Collection | Reservations Collection |
 |----------|-------------|
-| <img src="screenshots/postman/login.PNG" width="400"/> | <img src="screenshots/postman/unauthorized.PNG" width="400"/> | 
+| <img src="screenshots/postman/meals.PNG" width="400"/> | <img src="screenshots/postman/reservations.PNG" width="400"/> | 
 
-| User reservations | Cancelled reservation |
+| Tables Collection(1)  | Tables Collection(2) |
 |----------|-------------|
-| <img src="screenshots/postman/userReservations.PNG" width="400"/> | <img src="screenshots/postman/cancelReservation.PNG" width="400"/> | 
+| <img src="screenshots/postman/table_1.PNG" width="400"/> | <img src="screenshots/postman/table_2.PNG" width="400"/> | 
 
 
 🚀 Installation & Setup
