@@ -119,7 +119,22 @@ Restaurant-Project/
 | Available slots for table | 
 |----------|
 | <img src="screenshots/postman/Available_slots.PNG" width="400"/> | 
+
                                                             
+## Databse Structure:
+
+| User registeration | User already registered (with already registered email) |
+|----------|-------------|
+| <img src="screenshots/postman/register.PNG" width="400"/> | <img src="screenshots/postman/already_registered.PNG" width="400"/> | 
+ 
+| User login | Invalid credentials |
+|----------|-------------|
+| <img src="screenshots/postman/login.PNG" width="400"/> | <img src="screenshots/postman/unauthorized.PNG" width="400"/> | 
+
+| User reservations | Cancelled reservation |
+|----------|-------------|
+| <img src="screenshots/postman/userReservations.PNG" width="400"/> | <img src="screenshots/postman/cancelReservation.PNG" width="400"/> | 
+
 
 🚀 Installation & Setup
 1️⃣ Clone repository
