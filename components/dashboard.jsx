@@ -1,3 +1,6 @@
+/////////React components to display in adminjs dashboard////////////
+
+
 import React, { useState } from 'react'
 import { Box, H2, H3, H4, H5, H6, Text, Button, Input } from '@adminjs/design-system'
 
