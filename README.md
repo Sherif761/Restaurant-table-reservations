@@ -71,34 +71,36 @@ AdminJS panel for managing:
 
 # Project Structure:
 
+
 Restaurant-Project/
-│── README.md
-│── package.json
-│── app.js
-│── test.html
-|── test.js
-│── 📂 public/
-│   ├── 📂 images/
-       
-├── 📂 config/
-│   ├── mongodb.js
-│   ├── schemas.js
+├── README.md
+├── package.json
+├── app.js
+├── test.html
+├── test.js
 │
-├── 📂 services/
+├── public/
+│   └── images/
+│
+├── config/
+│   ├── mongodb.js
+│   └── schemas.js
+│
+├── services/
 │   ├── admin.js
 │   ├── authentication.js
-|   ├── tables.js
+│   └── tables.js
 │
-|── 📂 .adminjs/
-|   ├── bundle.js
-|   ├── entry.js
-|
-|── 📂 components/
-|   ├── dashboard.jsx
-|   ├── (AdminJS created files)
-|
-|── 📂 controllers/
-|   ├── AdminJS.js
+├── .adminjs/
+│   ├── bundle.js
+│   └── entry.js
+│
+├── components/
+│   ├── dashboard.jsx
+│   └── (AdminJS generated files)
+│
+└── controllers/
+    └── AdminJS.js
 
 
 # screenshots:
